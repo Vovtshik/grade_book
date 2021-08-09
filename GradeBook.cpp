@@ -30,17 +30,17 @@ string GradeBook::getCourseName()
    return courseName;
 }
 
-void displayMessage()
+void  GradeBook::displayMessage()
 {
    cout << "Welcome to the grade book for\n" << getCourseName()
 	<< "!" << endl;
 }
 
-void processGrades()
+void  GradeBook::processGrades()
 {
-   ourputGrades();
+   outputGrades();
 
-   cout << "\nClass average is " << setprecission(2) << fixed 
+   cout << "\nClass average is " << setprecision(2) << fixed 
 	<< getAverage() << endl;
 
    cout << "Lowest grade is " << getMinimum()
@@ -84,7 +84,7 @@ double GradeBook::getAverage()
       total += grades[grade];
    }
 
-   return return static_cast<double>(total) / students;
+   return static_cast<double>(total) / students;
 }
 
 void GradeBook::outputBarChart()
@@ -92,23 +92,23 @@ void GradeBook::outputBarChart()
    cout << "\nGrade distribution:" << endl;
 
    const int frequencySize = 11;
-   int frequency[frequenciSize] = {0};
+   int frequency[frequencySize] = {0};
 
    for(int grade = 0; grade < students; grade++)
    {
       frequency[grades[grade] / 10 ]++;
    }
 
-   for(int count = 0; count < frequencySize; cout++)
+   for(int count = 0; count < frequencySize; count++)
    {
-      if(count = 0)
-         cout << " 0-9: ";
-      else if(count == 100)
-	 cout << " 100: ";
+      if(count == 0)
+         cout << "  0-9: ";
+      else if(count == 10)
+	 cout << "  100: ";
       else
 	 cout << count * 10 << "-" << (count * 10) + 9 << ": ";
 
-      for(int stars = 0; stars < frequency[county]; stars++)
+      for(int stars = 0; stars < frequency[count]; stars++)
       {
           cout << '*';
       }
@@ -123,7 +123,7 @@ void GradeBook::outputGrades()
 
    for(int student = 0; student < students; student++)
    {
-      cout << "Student " << setw(2) << sturdent + 1 << ": "
+      cout << "Student " << setw(2) << student + 1 << ": "
 	   << setw(3) << grades[student] << endl;
    }
 }

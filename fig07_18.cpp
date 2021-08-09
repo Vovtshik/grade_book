@@ -1,7 +1,6 @@
 /*fig07_18.cpp*/
 
 #include <GradeBook.h>
-#include <GradeBook.cpp>
 
 int main()
 {

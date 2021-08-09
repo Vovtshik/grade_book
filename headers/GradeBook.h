@@ -1,7 +1,7 @@
 /*GradeBook.h*/
 
 #include <string>
-usig std::string;
+using std::string;
 
 class GradeBook
 {
